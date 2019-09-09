@@ -1,7 +1,11 @@
+const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
+
 export const grabProxies = (type, onSuccess, onFailure) => {
-  fetch(`${process.env.REACT_APP_URL}${type}`, {
-    method: 'GET',
+  fetch(`${PROXY_URL}${process.env.REACT_APP_URL}${type}`, {
     mode: 'cors',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   })
     .then(response => {
       if (response.ok) {
