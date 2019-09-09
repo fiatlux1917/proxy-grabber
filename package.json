@@ -61,7 +61,7 @@
   },
   "scripts": {
     "start": "env-cmd -f ./.env.development.local node scripts/start.js",
-    "build": "react-scripts build",
+    "build": "node scripts/build.js",
     "build:local": "env-cmd -f ./.env.production.local node scripts/build.js",
     "test": "node scripts/test.js",
     "precommit": "lint-staged"
@@ -138,11 +138,13 @@
     "bootstrap": "^4.3.1",
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "file-saver": "^2.0.2",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "requests": "^0.3.0"
   },
   "lint-staged": {
     "*.{js, jsx}": [
