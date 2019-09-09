@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import T from 'prop-types'
 
 import { Row, Col, FormGroup, Button, Input } from 'reactstrap'
 import { saveAs } from 'file-saver'
@@ -71,8 +72,22 @@ const MainForm = ({ proxies, onGrabbing }) => {
           </FormGroup>
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <h5>1 grab = 100 proxies</h5>
+        </Col>
+      </Row>
     </div>
   )
+}
+
+MainForm.propTypes = {
+  proxies: T.arrayOf(Object),
+  onGrabbing: T.func.isRequired,
+}
+
+MainForm.defaultProps = {
+  proxies: [],
 }
 
 export { MainForm }

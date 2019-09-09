@@ -1,4 +1,7 @@
 import React from 'react'
+import T from 'prop-types'
+
+import { ProxyRow } from '../ProxyRow'
 
 import './TableResult.scss'
 
@@ -13,24 +16,25 @@ const TableResults = ({ proxies }) => {
             <th>port</th>
             <th>protocol</th>
             <th>country</th>
+            <th>ssl</th>
           </tr>
         </thead>
         <tbody>
           {proxies.map((proxy, index) => {
-            return (
-              <tr key={proxy.ip}>
-                <th scope="row">{++index}</th>
-                <td>{proxy.ip}</td>
-                <td>{proxy.port}</td>
-                <td>{proxy.protocol}</td>
-                <td>{proxy.location}</td>
-              </tr>
-            )
+            return <ProxyRow proxy={proxy} index={index} />
           })}
         </tbody>
       </table>
     </div>
   )
+}
+
+TableResults.propTypes = {
+  proxies: T.arrayOf(Object),
+}
+
+TableResults.defaultProps = {
+  proxies: [],
 }
 
 export { TableResults }
