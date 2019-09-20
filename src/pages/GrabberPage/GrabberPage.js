@@ -5,7 +5,10 @@ import { Container } from 'reactstrap'
 import { MainForm } from '@/components/MainForm'
 import { grabProxies } from '@/api'
 
-const App = () => {
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+const GrabberPage = () => {
   const [proxiesList, setProxies] = useState([])
 
   const _onSuccess = proxies => {
@@ -27,4 +30,4 @@ const App = () => {
   )
 }
 
-export { App }
+export { GrabberPage }
