@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   proxies: [],
-  proxyType: 'all',
+  protocol: 'all',
   fetching: false,
   error: '',
 }
@@ -40,7 +40,7 @@ export const grabber = (state = initialState, action) => {
     case SET_PROXY_TYPE:
       return {
         ...state,
-        proxyType: action.type,
+        protocol: action.protocol,
       }
 
     case SET_INITIAL_STATE:

@@ -1,19 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.scss'
-import { GrabberPage } from '@/pages/GrabberPage'
+import configureStore from './store/configureStore'
 import * as serviceWorker from './serviceWorker'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
+import GrabberContainer from '@/containers/GrabberContainer/GrabberContainer'
 
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './index.scss'
 
 const store = configureStore()
 window.store = store
 
 ReactDOM.render(
   <Provider store={store}>
-    <GrabberPage />
+    <GrabberContainer />
   </Provider>,
   document.getElementById('root')
 )

@@ -144,12 +144,13 @@
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
+    "react-loader-spinner": "^3.1.4",
     "react-redux": "^7.1.1",
+    "react-select": "^3.0.5",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
-    "requests": "^0.3.0"
+    "redux-thunk": "^2.3.0"
   },
   "lint-staged": {
     "*.{js, jsx}": [

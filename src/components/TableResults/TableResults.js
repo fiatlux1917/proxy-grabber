@@ -8,7 +8,7 @@ import './TableResult.scss'
 const TableResults = ({ proxies }) => {
   return (
     <div className="table-wrapper-scroll-y custom-scrollbar">
-      <table className="table table-bordered table-striped mb-0">
+      <table className="table table-striped table-bordered table-sm">
         <thead>
           <tr>
             <th>#</th>
@@ -17,11 +17,16 @@ const TableResults = ({ proxies }) => {
             <th>protocol</th>
             <th>country</th>
             <th>ssl</th>
+            <th>amazon</th>
+            <th>google</th>
+            <th>facebook</th>
+            <th>twitch</th>
+            <th>netflix</th>
           </tr>
         </thead>
         <tbody>
           {proxies.map((proxy, index) => {
-            return <ProxyRow proxy={proxy} index={index} />
+            return <ProxyRow key={proxy.ip} proxy={proxy} index={index} />
           })}
         </tbody>
       </table>
