@@ -2,13 +2,11 @@ import {
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAIL,
-  SET_PROXY_TYPE,
   SET_INITIAL_STATE,
 } from '@/constants/grabber'
 
 const initialState = {
   proxies: [],
-  protocol: 'all',
   fetching: false,
   error: '',
 }
@@ -35,12 +33,6 @@ export const grabber = (state = initialState, action) => {
         ...state,
         error: action.payload.message,
         fetching: false,
-      }
-
-    case SET_PROXY_TYPE:
-      return {
-        ...state,
-        protocol: action.protocol,
       }
 
     case SET_INITIAL_STATE:

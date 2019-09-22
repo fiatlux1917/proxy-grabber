@@ -1,25 +1,6 @@
-import {
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  FETCH_FAIL,
-  SET_PROXY_TYPE,
-  SET_INITIAL_STATE,
-} from '@/constants/grabber'
+import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAIL } from '@/constants/grabber'
 
 import { grabProxiesFromApi } from '@/api'
-
-export const setInitialState = () => {
-  return {
-    type: SET_INITIAL_STATE,
-  }
-}
-
-export const setProxyProtocol = protocol => {
-  return {
-    type: SET_PROXY_TYPE,
-    protocol,
-  }
-}
 
 export const fetchRequest = () => {
   return {
