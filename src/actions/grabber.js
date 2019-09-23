@@ -18,7 +18,7 @@ export const fetchSuccess = proxies => {
 export const fetchFail = e => {
   return {
     type: FETCH_FAIL,
-    payload: new Error(e),
+    payload: e,
   }
 }
 
@@ -27,7 +27,11 @@ export const grabProxies = typeProxy => {
     dispatch(fetchRequest())
     grabProxiesFromApi(typeProxy)
       .then(([response, json]) => {
-        dispatch(fetchSuccess(json))
+        if (response.ok) {
+          dispatch(fetchSuccess(json))
+        } else {
+          dispatch(fetchFail(response.statusText))
+        }
       })
       .catch(e => dispatch(fetchFail(e)))
   }

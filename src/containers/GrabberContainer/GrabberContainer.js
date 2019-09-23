@@ -9,17 +9,13 @@ import { Preloader } from '@/components/Preloader'
 import { grabProxies } from '@/actions/grabber'
 
 const GrabberContainer = ({ grabberState, grabProxies }) => {
-  const { proxies, fetching, protocol } = grabberState
+  const { fetching } = grabberState
   return (
     <Fragment>
       {fetching ? (
         <Preloader />
       ) : (
-        <ControlPanel
-          grabProxies={grabProxies}
-          proxies={proxies}
-          protocol={protocol}
-        />
+        <ControlPanel grabProxies={grabProxies} {...grabberState} />
       )}
     </Fragment>
   )

@@ -7,7 +7,7 @@ import './TableResult.scss'
 
 const TableResults = ({ proxies }) => {
   return (
-    <div className="table-wrapper-scroll-y custom-scrollbar">
+    <div className="result-table">
       <table className="table table-striped table-bordered table-sm">
         <thead>
           <tr>
@@ -26,7 +26,13 @@ const TableResults = ({ proxies }) => {
         </thead>
         <tbody>
           {proxies.map((proxy, index) => {
-            return <ProxyRow key={proxy.ip} proxy={proxy} index={index} />
+            return (
+              <ProxyRow
+                key={`${proxy.ip}-${index}`}
+                proxy={proxy}
+                index={index}
+              />
+            )
           })}
         </tbody>
       </table>

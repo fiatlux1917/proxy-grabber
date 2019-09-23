@@ -13,13 +13,14 @@ import {
   ERROR_LABEL,
   MESSAGE_PROTOCOL,
   TIMEOUT_MESSAGE,
+  MAX_COUNT_GRAB,
 } from '@/constants/grabber'
 import { saveProxy } from '@/utils/saveProxy'
 
 import 'react-notifications/lib/notifications.css'
 import './ControlPanel.scss'
 
-const ControlPanel = ({ proxies, grabProxies }) => {
+const ControlPanel = ({ proxies, error, grabProxies }) => {
   const [protocol, setProtocol] = useState('')
 
   const handleProtocol = ({ value }) => {
@@ -28,7 +29,9 @@ const ControlPanel = ({ proxies, grabProxies }) => {
 
   const handleGrab = () => {
     if (protocol) {
-      grabProxies(protocol)
+      for (let i = 0; i < MAX_COUNT_GRAB; i++) {
+        grabProxies(protocol)
+      }
     } else {
       showMesseage(MESSAGE_PROTOCOL)
     }
@@ -44,6 +47,7 @@ const ControlPanel = ({ proxies, grabProxies }) => {
 
   return (
     <div className="control-panel">
+      <h4>Proxy grabber</h4>
       <Row>
         <Col md={4}>
           <FormGroup>
@@ -78,6 +82,11 @@ const ControlPanel = ({ proxies, grabProxies }) => {
           </FormGroup>
         </Col>
       </Row>
+      <h5>1 grab ~ 1000 proxies, duplicates are possible</h5>
+      <span>
+        coded by{' '}
+        <a href="https://github.com/JubasNTC/proxy-grabber">JubasNTC</a>
+      </span>
       <NotificationContainer />
     </div>
   )
@@ -86,10 +95,12 @@ const ControlPanel = ({ proxies, grabProxies }) => {
 ControlPanel.propTypes = {
   proxies: T.arrayOf(Object),
   grabProxies: T.func.isRequired,
+  error: T.string,
 }
 
 ControlPanel.defaultProps = {
   proxies: [],
+  error: '',
 }
 
 export { ControlPanel }
