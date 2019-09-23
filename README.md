@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/JubasNTC/proxy-grabber">
-    <img src="/docs-images/src-soft.png" alt="Logo" width="80" height="80">
+    <img src="/docs-images/logo-project.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Proxy-Grabber</h3>
@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/docs-images/src-soft.png" alt="Logo" width="300" height="400">
+<img src="/docs-images/src-soft.png" alt="Logo" width="900" height="617">
 
 Proxies are well suited for **brute-force**. Supports http and socks4 protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10%.
 
