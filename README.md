@@ -1,13 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/JubasNTC/proxy-grabber">
-    <img src="https://ibb.co/1Rym2rx" alt="Logo" width="80" height="80">
+    <img src="/docs-images/src-soft.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Proxy-Grabber</h3>
@@ -18,7 +13,7 @@
     <a href="https://github.com/JubasNTC/proxy-grabber/blob/master/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://sapogi-grabber.000webhostapp.com/">View proxy-grabber</a>
+    <a href="https://sapogi-grabber.000webhostapp.com/">View</a>
     ·
     <a href="https://github.com/JubasNTC/proxy-grabber/issues">Report Bug</a>
     ·
@@ -26,24 +21,15 @@
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://ibb.co/4ZJ7tXc)
+<img src="/docs-images/src-soft.png" alt="Logo" width="300" height="400">
 
-Proxies are well suited for **brute-force**. Supports http and socks4 protocols. **1 grab ~ 1000 proxies**. Possible duplicates **~ 10%**.
+Proxies are well suited for **brute-force**. Supports http and socks4 protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10%.
 
 ### Built With
-Coded on ReactJS and Redux
+Coded on React and Redux
 
 <!-- GETTING STARTED -->
 ## Getting Started
