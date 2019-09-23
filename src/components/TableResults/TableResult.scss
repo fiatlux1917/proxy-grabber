@@ -1,8 +1,13 @@
-.custom-scrollbar {
-  position: relative;
-  height: 400px;
-  overflow: auto;
+th {
+  background:#fff;
 }
-.table-wrapper-scroll-y {
-  display: block;
+
+.result-table { 
+  overflow-y: auto;
+  height: 350px;
+}
+
+.result-table thead th {
+  position: sticky;
+  top: 0;
 }

@@ -1,8 +1,7 @@
-.main-form {
+.control-panel {
   padding: 1em;
   margin: 1em;
   border: 2px solid #d3d3d3;
-  border-radius: .5em;
   margin-top: 50px;
 }
 
@@ -10,8 +9,4 @@
   overflow-y: scroll;
   min-height: 300px;
   resize: none; 
-}
-
-.button-form {
-  min-width: 100%;
 }
