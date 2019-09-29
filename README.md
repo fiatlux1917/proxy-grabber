@@ -5,10 +5,9 @@
     <img src="/docs-images/logo-project.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">Proxy-Grabber | JubasNTC</h3>
+  <h3 align="center">Proxy-Grabber | by JubasNTC</h3>
 
   <p align="center">
-    Good proxies for brute-force.
     <br />
     <a href="https://sapogi-grabber.000webhostapp.com/">View DEMO</a>
     ·
