@@ -2,18 +2,15 @@
 <br />
 <p align="center">
   <a href="https://sapogi-grabber.000webhostapp.com/">
-    <img src="/docs-images/logo-project.png" alt="Logo" width="80" height="80">
+    <img src="/docs-images/logo-project.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">Proxy-Grabber</h3>
+  <h3 align="center">Proxy-Grabber | JubasNTC</h3>
 
   <p align="center">
     Good proxies for brute-force.
     <br />
-    <a href="https://github.com/JubasNTC/proxy-grabber/blob/master/README.md"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://sapogi-grabber.000webhostapp.com/">View proxy-grabber</a>
+    <a href="https://sapogi-grabber.000webhostapp.com/">View DEMO</a>
     ·
     <a href="https://github.com/JubasNTC/proxy-grabber/issues">Report Bug</a>
   </p>
@@ -22,9 +19,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/docs-images/src-soft.png" alt="Logo" width="100%" height="617">
+<img src="/docs-images/scr-soft.png" alt="Logo" width="100%" height="100%">
 
-Proxies are well suited for **brute-force**. Supports **http** and **socks4** protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10%.
+Proxies are well suited for **brute-force**. Supports **http**, **https**, **socks4** protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10-15%.
 
 ### Built With
 Coded on React and Redux
