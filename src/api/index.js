@@ -1,6 +1,8 @@
-export const grabProxiesFromApi = protocol => {
-  const protocolString = protocol === 'all' ? '' : `&protocol=${protocol}`
-  return fetch(`${process.env.REACT_APP_URL}${protocolString}`, {
+import { getRequestString } from '@/utils/api'
+
+export const grabProxiesApi = protocol => {
+  const requestString = getRequestString(protocol)
+  return fetch(`${process.env.REACT_APP_URL}${requestString}`, {
     mode: 'cors',
     headers: {
       'Access-Control-Allow-Origin': '*',

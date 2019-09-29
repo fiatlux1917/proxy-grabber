@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import configureStore from './store/configureStore'
 import * as serviceWorker from './serviceWorker'
 
-import GrabberContainer from '@/containers/GrabberContainer/GrabberContainer'
-
 import { Provider } from 'react-redux'
+
+import GrabberContainer from '@/containers/GrabberContainer'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'

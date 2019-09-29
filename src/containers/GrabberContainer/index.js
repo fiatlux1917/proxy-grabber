@@ -3,19 +3,23 @@ import React, { Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { ControlPanel } from '@/components/ControlPanel'
+import { GrabberBox } from '@/components/GrabberBox'
 import { Preloader } from '@/components/Preloader'
 
-import { grabProxies } from '@/actions/grabber'
+import { grabProxies, setProtocol } from '@/actions/grabber'
 
-const GrabberContainer = ({ grabberState, grabProxies }) => {
+const GrabberContainer = ({ grabberState, grabProxies, setProtocol }) => {
   const { fetching } = grabberState
   return (
     <Fragment>
       {fetching ? (
         <Preloader />
       ) : (
-        <ControlPanel grabProxies={grabProxies} {...grabberState} />
+        <GrabberBox
+          grabProxies={grabProxies}
+          setProtocol={setProtocol}
+          {...grabberState}
+        />
       )}
     </Fragment>
   )
@@ -29,6 +33,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   grabProxies: bindActionCreators(grabProxies, dispatch),
+  setProtocol: bindActionCreators(setProtocol, dispatch),
 })
 
 export default connect(

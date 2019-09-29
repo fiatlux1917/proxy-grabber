@@ -1,6 +1,11 @@
-import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAIL } from '@/constants/grabber'
+import {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_FAIL,
+  SET_PROTOCOL,
+} from '@/constants/grabber'
 
-import { grabProxiesFromApi } from '@/api'
+import { grabProxiesApi } from '@/api'
 
 export const fetchRequest = () => {
   return {
@@ -18,14 +23,21 @@ export const fetchSuccess = proxies => {
 export const fetchFail = e => {
   return {
     type: FETCH_FAIL,
-    payload: e,
+    payload: new Error(e),
   }
 }
 
-export const grabProxies = typeProxy => {
+export const setProtocol = protocol => {
+  return {
+    type: SET_PROTOCOL,
+    protocol,
+  }
+}
+
+export const grabProxies = protocol => {
   return dispatch => {
     dispatch(fetchRequest())
-    grabProxiesFromApi(typeProxy)
+    grabProxiesApi(protocol)
       .then(([response, json]) => {
         if (response.ok) {
           dispatch(fetchSuccess(json))

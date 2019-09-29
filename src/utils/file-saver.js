@@ -5,7 +5,7 @@ const getSaveFormat = proxies => {
 }
 
 export const saveProxy = proxies => {
-  const saveResult = getSaveFormat(proxies).join('\n')
-  const data = new Blob([saveResult], { type: 'text/plain' })
+  const result = getSaveFormat(proxies).join('\n')
+  const data = new Blob([result], { type: 'text/plain' })
   saveAs(data, 'proxy.txt')
 }

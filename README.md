@@ -22,9 +22,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/docs-images/src-soft.png" alt="Logo" width="1000" height="617">
+<img src="/docs-images/src-soft.png" alt="Logo" width="100%" height="617">
 
-Proxies are well suited for **brute-force**. Supports http and socks4 protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10%.
+Proxies are well suited for **brute-force**. Supports **http** and **socks4** protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10%.
 
 ### Built With
 Coded on React and Redux
