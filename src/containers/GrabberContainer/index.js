@@ -6,18 +6,19 @@ import { connect } from 'react-redux'
 import { GrabberBox } from '@/components/GrabberBox'
 import { Preloader } from '@/components/Preloader'
 
-import { grabProxies, setProtocol } from '@/actions/grabber'
+import { setInitialState, grabProxies, setProtocol } from '@/actions/grabber'
 
-const GrabberContainer = ({ grabberState, grabProxies, setProtocol }) => {
-  const { fetching } = grabberState
+const GrabberContainer = props => {
+  const { grabberState, clearData, grabProxies, setProtocol } = props
   return (
     <Fragment>
-      {fetching ? (
+      {grabberState.fetching ? (
         <Preloader />
       ) : (
         <GrabberBox
           grabProxies={grabProxies}
           setProtocol={setProtocol}
+          clearData={clearData}
           {...grabberState}
         />
       )}
@@ -34,6 +35,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   grabProxies: bindActionCreators(grabProxies, dispatch),
   setProtocol: bindActionCreators(setProtocol, dispatch),
+  clearData: bindActionCreators(setInitialState, dispatch),
 })
 
 export default connect(

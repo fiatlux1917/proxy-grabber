@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import T from 'prop-types'
 
 import { Alert } from 'reactstrap'
 
+import './MessageBox.scss'
+
 const MessageBox = ({ message }) => {
   return (
-    <Fragment>
-      <Alert color="dark">{message}</Alert>
-    </Fragment>
+    <Alert className="message-box" color="dark">
+      {message}
+    </Alert>
   )
 }
 

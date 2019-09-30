@@ -12,16 +12,24 @@ import { TableResults } from '../TableResults'
 
 import { saveProxy } from '@/utils/file-saver'
 import {
-  PROTOCOLS,
-  COUNT_REQUEST,
+  CLICK_CLEAR,
   CLICK_GRAB,
   CLICK_SAVE,
+  COUNT_REQUEST,
+  PROTOCOLS,
 } from '@/constants/grabber'
 
 import './GrabberBox.scss'
 
 const GrabberBox = props => {
-  const { grabProxies, setProtocol, error, protocol, proxies } = props
+  const {
+    clearData,
+    grabProxies,
+    setProtocol,
+    error,
+    protocol,
+    proxies,
+  } = props
 
   const handleProtocol = value => {
     setProtocol(value)
@@ -29,10 +37,12 @@ const GrabberBox = props => {
 
   const handleClick = ({ target: { name } }) => {
     switch (name) {
+      case CLICK_CLEAR:
+        clearData()
+        break
+
       case CLICK_GRAB:
-        for (let i = 0; i < COUNT_REQUEST; i++) {
-          grabProxies(protocol.value)
-        }
+        grabWholesaleProxies(protocol.value)
         break
 
       case CLICK_SAVE:
@@ -41,6 +51,12 @@ const GrabberBox = props => {
 
       default:
         break
+    }
+  }
+
+  const grabWholesaleProxies = protocol => {
+    for (let i = 0; i < COUNT_REQUEST; i++) {
+      grabProxies(protocol)
     }
   }
 
@@ -62,8 +78,19 @@ const GrabberBox = props => {
           <FormGroup>
             {error && <MessageBox message={`error: ${error}`} />}
           </FormGroup>
+          <FormGroup>
+            <Button
+              className="button-clear"
+              size="sm"
+              name="clear"
+              onClick={handleClick}
+            >
+              Clear
+            </Button>
+          </FormGroup>
         </Col>
       </Row>
+
       <Row>
         <Col>
           <FormGroup>
@@ -94,6 +121,7 @@ const GrabberBox = props => {
 
 GrabberBox.propTypes = {
   proxies: T.arrayOf(Object),
+  clearData: T.func.isRequired,
   grabProxies: T.func.isRequired,
   setProtocol: T.func.isRequired,
   error: T.string,
