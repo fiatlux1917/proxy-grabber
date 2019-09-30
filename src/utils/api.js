@@ -7,7 +7,7 @@ export const getRequestString = protocol => {
     case 'https':
       return process.env.REACT_APP_REQUEST_HTTPS
     case 'socks4':
-      return process.env.REACT_APP_REQUEST_HTTPS
+      return process.env.REACT_APP_REQUEST_SOCKS4
     default:
       return `${process.env.REACT_APP_REQUEST_OTHER}${protocol}`
   }
