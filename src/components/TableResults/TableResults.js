@@ -15,8 +15,9 @@ const TableResults = ({ proxies }) => {
             <th>ip</th>
             <th>port</th>
             <th>protocol</th>
-            <th>country</th>
             <th>ssl</th>
+            <th>check</th>
+            <th>country</th>
             <th>amazon</th>
             <th>google</th>
             <th>facebook</th>
