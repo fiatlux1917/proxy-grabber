@@ -1,4 +1,4 @@
-export const getRequestString = protocol => {
+export const getRequestProtocol = protocol => {
   switch (protocol) {
     case 'all':
       return process.env.REACT_APP_REQUEST_ALL
@@ -10,5 +10,14 @@ export const getRequestString = protocol => {
       return process.env.REACT_APP_REQUEST_SOCKS4
     default:
       return `${process.env.REACT_APP_REQUEST_OTHER}${protocol}`
+  }
+}
+
+export const getRequestCountry = country => {
+  switch (country) {
+    case 'ALL':
+      return process.env.REACT_APP_REQUEST_LOCATION_ALL
+    default:
+      return `${process.env.REACT_APP_REQUEST_LOCATION}${country}`
   }
 }

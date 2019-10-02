@@ -1,21 +1,32 @@
 import {
+  COUNTRIES_LIST,
+  COUNT_REQUEST,
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAIL,
+  SET_COUNTRY,
   SET_PROTOCOL,
   SET_INITIAL_STATE,
   PROTOCOLS,
 } from '@/constants/grabber'
 
 const initialState = {
-  proxies: [],
-  fetching: false,
-  protocol: PROTOCOLS[0],
+  country: COUNTRIES_LIST[0],
   error: '',
+  fetching: false,
+  requestNumber: 1,
+  protocol: PROTOCOLS[0],
+  proxies: [],
 }
 
 export const grabber = (state = initialState, action) => {
   switch (action.type) {
+    case SET_COUNTRY:
+      return {
+        ...state,
+        country: action.country,
+      }
+
     case SET_PROTOCOL:
       return {
         ...state,
@@ -33,7 +44,9 @@ export const grabber = (state = initialState, action) => {
       return {
         ...state,
         proxies: state.proxies.concat(action.proxies),
-        fetching: false,
+        requestNumber:
+          state.requestNumber < COUNT_REQUEST ? ++state.requestNumber : 1,
+        fetching: state.requestNumber < COUNT_REQUEST ? true : false,
         error: '',
       }
 
@@ -41,7 +54,9 @@ export const grabber = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload.message,
-        fetching: false,
+        requestNumber:
+          state.requestNumber < COUNT_REQUEST ? ++state.requestNumber : 1,
+        fetching: state.requestNumber < COUNT_REQUEST ? true : false,
       }
 
     case SET_INITIAL_STATE:
