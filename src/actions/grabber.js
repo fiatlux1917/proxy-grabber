@@ -2,6 +2,7 @@ import {
   FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAIL,
+  SET_COUNTRY,
   SET_PROTOCOL,
   SET_INITIAL_STATE,
 } from '@/constants/grabber'
@@ -11,6 +12,13 @@ import { grabProxiesApi } from '@/api'
 export const setInitialState = () => {
   return {
     type: SET_INITIAL_STATE,
+  }
+}
+
+export const setCountry = country => {
+  return {
+    type: SET_COUNTRY,
+    country,
   }
 }
 
@@ -41,10 +49,10 @@ const fetchFail = e => {
   }
 }
 
-export const grabProxies = protocol => {
+export const grabProxies = (protocol, country) => {
   return dispatch => {
     dispatch(fetchRequest())
-    grabProxiesApi(protocol)
+    grabProxiesApi(protocol, country)
       .then(([response, json]) => {
         if (response.ok) {
           dispatch(fetchSuccess(json))

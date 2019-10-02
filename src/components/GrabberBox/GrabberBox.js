@@ -3,8 +3,9 @@ import T from 'prop-types'
 
 import Select from 'react-select'
 
-import { Button, Col, FormGroup, Row } from 'reactstrap'
+import { Button, FormGroup, Row } from 'reactstrap'
 
+import { ComponentBox } from '../ComponentBox'
 import { HeaderBox } from '../HeaderBox'
 import { MessageBox } from '../MessageBox'
 import { InfoBox } from '../InfoBox'
@@ -16,6 +17,7 @@ import {
   CLICK_GRAB,
   CLICK_SAVE,
   COUNT_REQUEST,
+  COUNTRIES_LIST,
   PROTOCOLS,
 } from '@/constants/grabber'
 
@@ -26,14 +28,13 @@ const GrabberBox = props => {
     clearData,
     grabProxies,
     setProtocol,
-    error,
-    protocol,
-    proxies,
+    setCountry,
+    grabberState: { country, error, protocol, proxies },
   } = props
 
-  const handleProtocol = value => {
-    setProtocol(value)
-  }
+  const handleCountry = value => setCountry(value)
+
+  const handleProtocol = value => setProtocol(value)
 
   const handleClick = ({ target: { name } }) => {
     switch (name) {
@@ -42,7 +43,7 @@ const GrabberBox = props => {
         break
 
       case CLICK_GRAB:
-        grabWholesaleProxies(protocol.value)
+        grabWholesaleProxies(protocol.value, country.value)
         break
 
       case CLICK_SAVE:
@@ -54,9 +55,9 @@ const GrabberBox = props => {
     }
   }
 
-  const grabWholesaleProxies = protocol => {
+  const grabWholesaleProxies = (protocol, country) => {
     for (let i = 0; i < COUNT_REQUEST; i++) {
-      grabProxies(protocol)
+      grabProxies(protocol, country)
     }
   }
 
@@ -64,17 +65,23 @@ const GrabberBox = props => {
     <div className="grabber-box">
       <HeaderBox />
       <Row>
-        <Col md={4}>
-          <FormGroup>
-            <Select
-              options={PROTOCOLS}
-              value={protocol}
-              onChange={handleProtocol}
-              placeholder="select protocol..."
-            />
-          </FormGroup>
-        </Col>
-        <Col md={8}>
+        <ComponentBox colSize={2}>
+          <Select
+            options={PROTOCOLS}
+            value={protocol}
+            onChange={handleProtocol}
+            placeholder="protocol..."
+          />
+        </ComponentBox>
+        <ComponentBox colSize={3}>
+          <Select
+            options={COUNTRIES_LIST}
+            value={country}
+            onChange={handleCountry}
+            placeholder="country..."
+          />
+        </ComponentBox>
+        <ComponentBox colSize={7}>
           <FormGroup>
             {error && <MessageBox message={`error: ${error}`} />}
           </FormGroup>
@@ -88,31 +95,24 @@ const GrabberBox = props => {
               Clear
             </Button>
           </FormGroup>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <FormGroup>
-            <TableResults proxies={proxies} />
-          </FormGroup>
-        </Col>
+        </ComponentBox>
       </Row>
       <Row>
-        <Col md={6}>
-          <FormGroup>
-            <Button name="grab" onClick={handleClick} block>
-              Grab
-            </Button>
-          </FormGroup>
-        </Col>
-        <Col md={6}>
-          <FormGroup>
-            <Button name="save" onClick={handleClick} block>
-              Save to txt
-            </Button>
-          </FormGroup>
-        </Col>
+        <ComponentBox>
+          <TableResults proxies={proxies} />
+        </ComponentBox>
+      </Row>
+      <Row>
+        <ComponentBox colSize={6}>
+          <Button name="grab" onClick={handleClick} block>
+            Grab
+          </Button>
+        </ComponentBox>
+        <ComponentBox colSize={6}>
+          <Button name="save" onClick={handleClick} block>
+            Save to txt
+          </Button>
+        </ComponentBox>
       </Row>
       <InfoBox />
     </div>
@@ -120,16 +120,11 @@ const GrabberBox = props => {
 }
 
 GrabberBox.propTypes = {
-  proxies: T.arrayOf(Object),
   clearData: T.func.isRequired,
   grabProxies: T.func.isRequired,
   setProtocol: T.func.isRequired,
-  error: T.string,
-}
-
-GrabberBox.defaultProps = {
-  proxies: [],
-  error: '',
+  setCountry: T.func.isRequired,
+  grabberState: T.object.isRequired,
 }
 
 export { GrabberBox }
