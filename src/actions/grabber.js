@@ -43,6 +43,7 @@ const fetchSuccess = proxies => {
 }
 
 const fetchFail = e => {
+  console.clear()
   return {
     type: FETCH_FAIL,
     payload: new Error(e),
@@ -60,6 +61,8 @@ export const grabProxies = (protocol, country) => {
           dispatch(fetchFail(response.statusText))
         }
       })
-      .catch(e => dispatch(fetchFail(e)))
+      .catch(e => {
+        dispatch(fetchFail(e))
+      })
   }
 }
