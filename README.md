@@ -17,12 +17,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/docs-images/scr-soft.png" alt="Logo" width="100%" height="100%">
+<img src="/docs-images/soft.png" alt="Logo" width="100%" height="100%">
 
 Proxies are well suited for **brute-force**. Supports **http**, **https**, **socks4** protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10-15%.
 
 ## Reviews
-Reviews [bhfio](https://bhf.io/threads/568324/).
+Reviews on [BHF](https://bhf.io/threads/568324/).
 
 ### Built With
 Coded on React and Redux
