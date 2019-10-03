@@ -14,10 +14,7 @@ export const getRequestProtocol = protocol => {
 }
 
 export const getRequestCountry = country => {
-  switch (country) {
-    case 'ALL':
-      return process.env.REACT_APP_REQUEST_LOCATION_ALL
-    default:
-      return `${process.env.REACT_APP_REQUEST_LOCATION}${country}`
-  }
+  return country === 'ALL'
+    ? process.env.REACT_APP_REQUEST_LOCATION_ALL
+    : `${process.env.REACT_APP_REQUEST_LOCATION}${country}`
 }
