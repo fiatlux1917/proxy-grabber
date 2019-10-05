@@ -7,6 +7,7 @@ export const SET_PROTOCOL = 'SET_PROTOCOL'
 export const SET_COUNTRY = 'SET_COUNTRY'
 export const SET_INITIAL_STATE = 'SET_INITIAL_STATE'
 export const URL_GITHUB_PROFILE = 'https://github.com/JubasNTC'
+export const URL_BHF_TOPIC = 'https://bhf.io/threads/568324/'
 export const CLICK_CLEAR = 'clear'
 export const CLICK_GRAB = 'grab'
 export const CLICK_SAVE = 'save'
@@ -20,7 +21,7 @@ export const PROTOCOLS = [
 export const COUNTRIES_LIST = [
   { label: 'All coutries', value: 'ALL' },
   { label: 'Afghanistan', value: 'AF' },
-  { label: 'land Islands', value: 'AX' },
+  { label: 'Land Islands', value: 'AX' },
   { label: 'Albania', value: 'AL' },
   { label: 'Algeria', value: 'DZ' },
   { label: 'American Samoa', value: 'AS' },
@@ -293,7 +294,7 @@ export const columns = [
     Cell: props => getCheckValue(props),
   },
   {
-    Header: 'lastChecked',
+    Header: 'сhecked',
     accessor: 'lastChecked',
     Cell: props =>
       moment
@@ -318,6 +319,16 @@ export const columns = [
   {
     Header: 'facebook',
     accessor: 'websites.facebook',
+    Cell: props => getCheckValue(props),
+  },
+  {
+    Header: 'youtube',
+    accessor: 'websites.youtube',
+    Cell: props => getCheckValue(props),
+  },
+  {
+    Header: 'instagram',
+    accessor: 'websites.instagram',
     Cell: props => getCheckValue(props),
   },
   {
