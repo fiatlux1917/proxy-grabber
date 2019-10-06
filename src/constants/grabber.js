@@ -309,36 +309,41 @@ export const columns = [
   {
     Header: 'amazon',
     accessor: 'websites.amazon',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'google',
     accessor: 'websites.google',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'facebook',
     accessor: 'websites.facebook',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
+  },
+  {
+    Header: 'twitter',
+    accessor: 'websites.twitter',
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'youtube',
     accessor: 'websites.youtube',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'instagram',
     accessor: 'websites.instagram',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'twitch',
     accessor: 'websites.twitch',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
   {
     Header: 'netflix',
     accessor: 'websites.netflix',
-    Cell: props => getCheckValue(props),
+    Cell: props => getCheckValue(props.value),
   },
 ]

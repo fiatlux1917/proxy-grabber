@@ -10,7 +10,15 @@ import 'react-table/react-table.css'
 const TableResults = ({ proxies }) => {
   return (
     <div>
-      <ReactTable data={proxies} defaultPageSize={10} columns={columns} />
+      <ReactTable
+        data={proxies}
+        defaultPageSize={10}
+        columns={columns}
+        style={{
+          height: '400px',
+        }}
+        className="-striped -highlight"
+      />
     </div>
   )
 }
