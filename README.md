@@ -19,7 +19,7 @@
 
 <img src="/docs-images/new-soft.png" alt="Logo" width="100%" height="100%">
 
-Proxies are well suited for **brute-force**. Supports **http**, **https**, **socks4** protocols. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10-15%.
+Proxies are well suited for **brute-force**. Supports **http**, **https**, **socks4** protocols. There is detailed information on each proxy, in the flesh along the aisle to popular sites. The proxy check time and location are also displayed. **1 grab ~ 1000 proxies**. Possible duplicates ~ 10-15%. 
 
 ## Reviews
 Reviews on [BHF](https://bhf.io/threads/568324/).
