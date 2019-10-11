@@ -8,6 +8,8 @@ export const getRequestProtocol = protocol => {
       return process.env.REACT_APP_REQUEST_HTTPS
     case 'socks4':
       return process.env.REACT_APP_REQUEST_SOCKS4
+    case 'socks5':
+      return process.env.REACT_APP_REQUEST_SOCKS5
     default:
       return `${process.env.REACT_APP_REQUEST_OTHER}${protocol}`
   }

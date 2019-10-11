@@ -17,6 +17,7 @@ export const PROTOCOLS = [
   { label: 'http', value: 'http' },
   { label: 'https', value: 'https' },
   { label: 'socks4', value: 'socks4' },
+  { label: 'socks5', value: 'socks5' },
 ]
 export const COUNTRIES_LIST = [
   { label: 'All coutries', value: 'ALL' },
