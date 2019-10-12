@@ -9,6 +9,7 @@ import {
   SET_INITIAL_STATE,
   PROTOCOLS,
 } from '@/constants/grabber'
+import { getUniqueList } from '@/utils/api'
 
 const initialState = {
   country: COUNTRIES_LIST[0],
@@ -43,7 +44,10 @@ export const grabber = (state = initialState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
-        proxies: state.proxies.concat(action.proxies),
+        proxies:
+          state.requestNumber < COUNT_REQUEST
+            ? state.proxies.concat(action.proxies)
+            : getUniqueList(state.proxies.concat(action.proxies)),
         requestNumber:
           state.requestNumber < COUNT_REQUEST ? ++state.requestNumber : 1,
         fetching: state.requestNumber < COUNT_REQUEST ? true : false,

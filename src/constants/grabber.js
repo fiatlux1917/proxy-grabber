@@ -11,7 +11,7 @@ export const URL_BHF_TOPIC = 'https://bhf.io/threads/568324/'
 export const CLICK_CLEAR = 'clear'
 export const CLICK_GRAB = 'grab'
 export const CLICK_SAVE = 'save'
-export const COUNT_REQUEST = 10
+export const COUNT_REQUEST = 15
 export const PROTOCOLS = [
   { label: 'all', value: 'all' },
   { label: 'http', value: 'http' },

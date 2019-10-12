@@ -20,3 +20,11 @@ export const getRequestCountry = country => {
     ? process.env.REACT_APP_REQUEST_LOCATION_ALL
     : `${process.env.REACT_APP_REQUEST_LOCATION}${country}`
 }
+
+export const getUniqueList = proxiesList => {
+  return proxiesList
+    .map(e => e.ip)
+    .map((e, i, final) => final.indexOf(e) === i && i)
+    .filter(e => proxiesList[e])
+    .map(e => proxiesList[e])
+}
