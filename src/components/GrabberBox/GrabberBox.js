@@ -114,7 +114,7 @@ const GrabberBox = props => {
           </Button>
         </ComponentBox>
       </Row>
-      <InfoBox />
+      <InfoBox countProxies={proxies.length} />
     </div>
   )
 }
