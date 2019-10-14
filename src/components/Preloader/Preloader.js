@@ -4,10 +4,10 @@ import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './Preloader.scss'
 
-const Preloader = props => {
+const Preloader = () => {
   return (
     <div className="preloader">
-      <Loader type="Triangle" color="#5481FE" height={300} width={300} />
+      <Loader type="Oval" color="#8a8c99" height={300} width={300} />
     </div>
   )
 }
