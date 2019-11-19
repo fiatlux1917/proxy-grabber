@@ -14,7 +14,6 @@
   </p>
 </p>
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <img src="/docs-images/new-soft.png" alt="Logo" width="100%" height="100%">
@@ -27,7 +26,6 @@ Reviews on [BHF](https://bhf.io/threads/568324/).
 ### Built With
 Coded on React and Redux
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
