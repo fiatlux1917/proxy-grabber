@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 
 import 'semantic-ui-css/semantic.min.css'
 import 'sanitize.css'
-import './index.css'
+import './index.scss'
 
 const store = configureStore({})
 

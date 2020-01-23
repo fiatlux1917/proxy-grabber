@@ -1,11 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
+import { GrabberBlock } from '../../molecules/GrabberBlock';
 
 interface GrabberProps {
   className?: string;
 }
 
 const Grabber: React.FC<GrabberProps> = () => {
-  return <div>Grabber</div>
-}
+  return <GrabberBlock />;
+};
 
-export { Grabber }
+export { Grabber };
