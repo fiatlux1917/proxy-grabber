@@ -6,12 +6,14 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/file-saver": "^2.0.1",
     "@types/jest": "^24.9.0",
     "@types/node": "^12.12.25",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/react-redux": "^7.1.6",
     "@types/semantic-ui": "^2.2.7",
+    "file-saver": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
@@ -24,8 +26,9 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -f ./.env.development.local react-scripts start",
     "build": "react-scripts build",
+    "build:local": "env-cmd -f ./.env.production.local node scripts/build.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "precommit": "lint-staged"

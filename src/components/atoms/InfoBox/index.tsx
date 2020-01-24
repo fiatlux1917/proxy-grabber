@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 
 import './styles.scss';
 
@@ -8,14 +8,15 @@ interface InfoBoxProps {
 }
 
 const InfoBox: React.FC<InfoBoxProps> = () => (
-  <Header
-    className="info-box"
-    as="h4"
-    content="Coded by JubasNTC"
-    subheader="Reviews on BHF"
-    block
-    fluid
-  />
+  <Segment>
+    <h4>Information</h4>
+    <p>
+      Source: <a href="https://github.com/JubasNTC/proxy-grabber">Github</a>
+    </p>
+    <p>
+      Reviews: <a href="https://bhf.io/threads/568324/">BHF</a>
+    </p>
+  </Segment>
 );
 
 export { InfoBox };

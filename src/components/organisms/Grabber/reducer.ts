@@ -1,12 +1,19 @@
-import { GrabberState } from './types'
-import { SimpleAction } from '../../../types/actions'
-import { FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAIL } from './actions'
+import { GrabberState } from './types';
+import { SimpleAction } from '../../../types/actions';
+import {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_FAIL,
+  SET_PROTOCOL,
+  CLEAR_LOG,
+} from './actions';
 
 const initialState: GrabberState = {
-  proxiesList: [],
+  proxiesList: '',
+  protocol: 'socks',
   fetching: false,
   error: '',
-}
+};
 
 const grabber = (
   state: GrabberState = initialState,
@@ -18,25 +25,38 @@ const grabber = (
         ...state,
         fetching: true,
         error: '',
-      }
+      };
 
     case FETCH_SUCCESS:
       return {
         ...state,
+        proxiesList: action.payload,
         fetching: false,
         error: '',
-      }
+      };
 
     case FETCH_FAIL:
       return {
         ...state,
         fetching: false,
         error: action.payload,
-      }
+      };
+
+    case SET_PROTOCOL:
+      return {
+        ...state,
+        protocol: action.payload,
+      };
+
+    case CLEAR_LOG:
+      return {
+        ...state,
+        proxiesList: '',
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export { grabber }
+export { grabber };

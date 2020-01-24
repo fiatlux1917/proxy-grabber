@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Select } from 'semantic-ui-react';
+import { Select, DropdownProps } from 'semantic-ui-react';
+import { SetProtocol } from '../../organisms/Grabber/types';
 
 const protocolsOptions = [
   { key: 'all', value: 'all', text: 'ALL' },
@@ -9,10 +10,27 @@ const protocolsOptions = [
 
 interface ProtocolsListProps {
   className?: string;
+  setProtocol: SetProtocol;
 }
 
-const ProtocolsList: React.FC<ProtocolsListProps> = () => (
-  <Select placeholder="Select protocol" options={protocolsOptions} fluid />
-);
+const ProtocolsList: React.FC<ProtocolsListProps> = ({ setProtocol }) => {
+  const hanldeSelect = (
+    event: React.SyntheticEvent<HTMLElement, Event>,
+    data: DropdownProps
+  ): void => {
+    const protocol = String(data.value);
+    setProtocol(protocol);
+  };
+
+  return (
+    <Select
+      placeholder="Select protocol"
+      options={protocolsOptions}
+      defaultValue="socks"
+      onChange={hanldeSelect}
+      fluid={true}
+    />
+  );
+};
 
 export { ProtocolsList };
