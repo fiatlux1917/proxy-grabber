@@ -8,7 +8,9 @@
   <p align="center">
     <a href="https://sapogi-grabber.000webhostapp.com/">View DEMO</a>
     ·
-    <a href="https://bhf.io/threads/568324/">Reviews</a>
+    <a href="https://bhf.io/threads/568324/">Reviews old</a>
+    ·
+    <a href="https://a.bhf.vc/threads/568324/">Reviews mirror</a>
     ·
     <a href="https://github.com/JubasNTC/proxy-grabber/issues">Report Bug</a>
   </p>
@@ -21,7 +23,8 @@
 Proxies are well suited for **brute-force**. Supports **http(s)**, **socks(4/5)** protocols. There is detailed information on each proxy, in the flesh along the aisle to popular sites. The proxy check time and location are also displayed. Possible duplicates ~ 10-15%. REMASTRED...
 
 ## Reviews
-Reviews on [BHF](https://bhf.io/threads/568324/).
+Reviews on [BHF OLD](https://bhf.io/threads/568324/).
+Reviews on [BHF MIRROR](https://a.bhf.vc/threads/568324/).
 
 ### Built With
 Coded on Typescript wtih React and Redux
